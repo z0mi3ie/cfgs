@@ -1,6 +1,6 @@
 set $mod Mod1
 
-font pango:"Terminess Nerd Font Mono" 7
+font pango:"Terminess Nerd Font Mono" 10
 
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -31,11 +31,6 @@ bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
 bindsym $mod+Shift+h split h
 bindsym $mod+Shift+v split v
 bindsym $mod+f fullscreen toggle
@@ -45,43 +40,42 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 bindsym $mod+Shift+space floating toggle
-
 bindsym $mod+space focus mode_toggle
 
 bindsym $mod+a focus parent
 
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 "一"
+set $ws2 "二"
+set $ws3 "三"
+set $ws4 "四"
+set $ws5 "五"
+set $ws6 "六"
+set $ws7 "七"
+set $ws8 "八"
+set $ws9 "九"
+set $ws10 "十"
 
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
@@ -101,20 +95,15 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
-        status_command i3status
+        status_command i3status -c ~/.config/i3status/config
         colors {
-            background #282828
-            statusline #fbf1c7
-            separator #b16286
-            # outline fill txt
-            #focused_workspace  #4c7899 #285577 #ffffff
-            #active_workspace   #333333 #5f676a #ffffff
-            #inactive_workspace #333333 #222222 #888888
-            #urgent_workspace   #2f343a #900000 #ffffff
-            #binding_mode       #2f343a #900000 #ffffff
-            focused_workspace  #b16286 #8f3f71 #fbf1c7
-            active_workspace   #333333 #5f676a #fbf1c7
-            inactive_workspace #689d6a #427b58 #fbf1c7
+            #background #282828
+            #statusline #fbf1c7
+            #separator #b16286
+			
+            focused_workspace  #787878 #000000 #fbf1c7
+            active_workspace   #000000 #FFFFFF #fbf1c7
+            inactive_workspace #000000 #000000 #fbf1c7
             urgent_workspace   #d65d0e #af3a03 #fbf1c7
             binding_mode       #d65d0e #af3a03 #fbf1c7
         }
@@ -126,9 +115,11 @@ default_border pixel 2
 default_floating_border pixel 2
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #ccff00   #ccff00
+#client.focused          #4c7899 #285577 #ffffff #ccff00   #ccff00
+client.focused          #4c7899 #285577 #ffffff #FFFFFF   #FFFFFF
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
