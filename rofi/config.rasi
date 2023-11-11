@@ -1,11 +1,11 @@
 configuration {
 /*	modi: "window,run,ssh";*/
-/*	font: "mono 12";*/
+	font: "Terminess 10";
 /*	location: 0;*/
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
-/*	show-icons: false;*/
+	show-icons: false;
 /*	terminal: "rofi-sensible-terminal";*/
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
@@ -145,5 +145,6 @@ configuration {
       sorting-method:    "name";
   }
 }
-//@theme "/usr/share/rofi/themes/docu.rasi"
-@theme "/usr/share/rofi/themes/gruvbox-common.rasi"
+
+/*@theme "/home/z0mi3ie/.config/rofi/gruvbox-common.rasi"*/
+@theme "/home/z0mi3ie/.config/rofi/dark.rasi"
